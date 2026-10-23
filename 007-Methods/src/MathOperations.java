@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MathOperations {
@@ -7,7 +8,7 @@ public class MathOperations {
         String operator = scanner.nextLine();
         int secondNum = Integer.parseInt(scanner.nextLine());
         double result = calculate(firstNum, operator, secondNum);
-        System.out.printf("%.0f", result);
+        System.out.println(new DecimalFormat("0.##").format(result));
     }
 
     private static double calculate(int firstNum, String operator, int secondNum) {

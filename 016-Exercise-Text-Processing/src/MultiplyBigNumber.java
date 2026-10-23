@@ -17,6 +17,6 @@ public class MultiplyBigNumber {
             output.append(remainder);
         }
         output.reverse();
-        System.out.println(output);
+        System.out.println(output.toString().replaceFirst("^0+(?!$)", ""));
     }
 }

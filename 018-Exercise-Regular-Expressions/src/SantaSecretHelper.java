@@ -1,26 +1,22 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SantaSecretHelper {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int key = Integer.parseInt(scanner.nextLine());
+        Pattern pattern = Pattern.compile("@(?<name>[A-Za-z]+)[^@\\-!:>]*!(?<behaviour>[GN])!");
         String input = scanner.nextLine();
+
         while (!input.equals("end")) {
             StringBuilder decryptedMessage = new StringBuilder();
             for (int i = 0; i < input.length(); i++) {
-                char currentChar = input.charAt(i);
-                char decryptedChar = (char) (currentChar - key);
-                decryptedMessage.append(decryptedChar);
+                decryptedMessage.append((char) (input.charAt(i) - key));
             }
-            String message = decryptedMessage.toString();
-            if (message.contains("@")) {
-                int startIndex = message.indexOf("@");
-                int endIndex = message.indexOf("|");
-                String name = message.substring(startIndex + 1, endIndex);
-                startIndex = message.indexOf("|");
-                endIndex = message.indexOf("#");
-                String behaviour = message.substring(startIndex + 1, endIndex);
-                System.out.println(name + " " + behaviour);
+            Matcher matcher = pattern.matcher(decryptedMessage);
+            if (matcher.find() && matcher.group("behaviour").equals("G")) {
+                System.out.println(matcher.group("name"));
             }
             input = scanner.nextLine();
         }

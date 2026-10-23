@@ -11,22 +11,21 @@ public class LongerLine {
         double y3 = Double.parseDouble(scanner.nextLine());
         double x4 = Double.parseDouble(scanner.nextLine());
         double y4 = Double.parseDouble(scanner.nextLine());
-        double distance1 = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
-        double distance2 = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
-        double distance3 = Math.sqrt(Math.pow(x3, 2) + Math.pow(y3, 2));
-        double distance4 = Math.sqrt(Math.pow(x4, 2) + Math.pow(y4, 2));
-        if (distance1 <= distance2) {
-            if (distance3 <= distance4) {
-                System.out.printf("(%f, %f)(%f, %f)", x1, y1, x2, y2);
-            } else {
-                System.out.printf("(%f, %f)(%f, %f)", x1, y1, x4, y4);
-            }
+        double firstLine = Math.hypot(x1 - x2, y1 - y2);
+        double secondLine = Math.hypot(x3 - x4, y3 - y4);
+        if (firstLine >= secondLine) {
+            printLine(x1, y1, x2, y2);
         } else {
-            if (distance3 <= distance4) {
-                System.out.printf("(%f, %f)(%f, %f)", x3, y3, x2, y2);
-            } else {
-                System.out.printf("(%f, %f)(%f, %f)", x3, y3, x4, y4);
-            }
+            printLine(x3, y3, x4, y4);
+        }
+    }
+
+    private static void printLine(double x1, double y1, double x2, double y2) {
+        // the point closer to the center goes first
+        if (Math.hypot(x1, y1) <= Math.hypot(x2, y2)) {
+            System.out.printf("(%.0f, %.0f)(%.0f, %.0f)", x1, y1, x2, y2);
+        } else {
+            System.out.printf("(%.0f, %.0f)(%.0f, %.0f)", x2, y2, x1, y1);
         }
     }
 }

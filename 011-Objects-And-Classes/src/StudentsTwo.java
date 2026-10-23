@@ -18,11 +18,16 @@ public class StudentsTwo {
             int age = Integer.parseInt(tokens[2]);
             String hometown = tokens[3];
             Student student = new Student(firstName, lastName, age, hometown);
-            if (students.contains(student)) {
-                int index = students.indexOf(student);
-                students.set(index, student);
-            } else {
+            int index = -1;
+            for (int i = 0; i < students.size(); i++) {
+                if (students.get(i).getFirstName().equals(firstName) && students.get(i).getLastName().equals(lastName)) {
+                    index = i;
+                }
+            }
+            if (index == -1) {
                 students.add(student);
+            } else {
+                students.set(index, student);
             }
             input = scanner.nextLine();
         }

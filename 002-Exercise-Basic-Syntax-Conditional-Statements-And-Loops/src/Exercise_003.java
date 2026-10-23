@@ -23,7 +23,7 @@ public class Exercise_003 {
             }
             case "Business" -> {
                 if (people >= 100) {
-                    totalPrice = pricePerPerson * (people - 10);
+                    people -= 10;
                 }
                 pricePerPerson = switch (day) {
                     case "Friday" -> 10.90;

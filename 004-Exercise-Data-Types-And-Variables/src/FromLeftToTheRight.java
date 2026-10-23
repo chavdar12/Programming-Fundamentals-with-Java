@@ -9,19 +9,13 @@ public class FromLeftToTheRight {
             String[] numbers = scanner.nextLine().split(" ");
             long left = Long.parseLong(numbers[0]);
             long right = Long.parseLong(numbers[1]);
+            long number = Math.abs(Math.max(left, right));
             long sum = 0;
-            if (left > right) {
-                while (left > 0) {
-                    sum += left % 10;
-                    left /= 10;
-                }
-            } else {
-                while (right > 0) {
-                    sum += right % 10;
-                    right /= 10;
-                }
+            while (number > 0) {
+                sum += number % 10;
+                number /= 10;
             }
-            System.out.println(Math.abs(sum));
+            System.out.println(sum);
         }
     }
 }

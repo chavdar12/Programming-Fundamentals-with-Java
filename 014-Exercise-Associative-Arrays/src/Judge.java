@@ -25,7 +25,7 @@ public class Judge {
         contests.forEach((key, value) -> {
             System.out.printf("%s: %d participants%n", key, value.size());
             int counter = 1;
-            for (Map.Entry<String, Integer> entry : value.entrySet().stream().sorted((a, b) -> b.getValue().compareTo(a.getValue())).collect(Collectors.toList())) {
+            for (Map.Entry<String, Integer> entry : value.entrySet().stream().sorted((a, b) -> b.getValue().equals(a.getValue()) ? a.getKey().compareTo(b.getKey()) : b.getValue().compareTo(a.getValue())).collect(Collectors.toList())) {
                 System.out.printf("%d. %s <::> %d%n", counter, entry.getKey(), entry.getValue());
                 counter++;
             }
@@ -42,7 +42,7 @@ public class Judge {
             for (Map.Entry<String, Integer> entry1 : b.getValue().entrySet()) {
                 sumB += entry1.getValue();
             }
-            return Integer.compare(sumB, sumA);
+            return sumA == sumB ? a.getKey().compareTo(b.getKey()) : Integer.compare(sumB, sumA);
         }).toList()) {
             int sum = 0;
             for (Map.Entry<String, Integer> entry1 : entry.getValue().entrySet()) {

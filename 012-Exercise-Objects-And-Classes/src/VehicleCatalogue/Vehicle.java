@@ -31,8 +31,7 @@ public class Vehicle {
                         Type: %s
                         Model: %s
                         Color: %s
-                        Horsepower: %d
-                        """,
+                        Horsepower: %d""",
                 type, model, color, horsepower);
     }
 }

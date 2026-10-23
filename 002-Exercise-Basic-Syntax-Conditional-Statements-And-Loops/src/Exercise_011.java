@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercise_011 {
@@ -7,33 +8,10 @@ public class Exercise_011 {
         int num2 = Integer.parseInt(scanner.nextLine());
         int num3 = Integer.parseInt(scanner.nextLine());
 
-        if (num1 > num2 && num1 > num3) {
-            System.out.println(num1);
-            if (num2 > num3) {
-                System.out.println(num2);
-                System.out.println(num3);
-            } else {
-                System.out.println(num3);
-                System.out.println(num2);
-            }
-        } else if (num2 > num1 && num2 > num3) {
-            System.out.println(num2);
-            if (num1 > num3) {
-                System.out.println(num1);
-                System.out.println(num3);
-            } else {
-                System.out.println(num3);
-                System.out.println(num1);
-            }
-        } else if (num3 > num1 && num3 > num2) {
-            System.out.println(num3);
-            if (num1 > num2) {
-                System.out.println(num1);
-                System.out.println(num2);
-            } else {
-                System.out.println(num2);
-                System.out.println(num1);
-            }
+        int[] numbers = {num1, num2, num3};
+        Arrays.sort(numbers);
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.println(numbers[i]);
         }
     }
 }

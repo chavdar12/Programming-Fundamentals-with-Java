@@ -27,6 +27,9 @@ public class TakeSkipRope {
         for (int i = 0; i < take.length; i++) {
             int takeCount = take[i];
             int skipCount = skip[i];
+            if (index >= nonNumbers.length()) {
+                break;
+            }
             if (takeCount + index > nonNumbers.length()) {
                 takeCount = nonNumbers.length() - index;
             }

@@ -15,13 +15,12 @@ public class Main {
             String name = tokens[0];
             double price = Double.parseDouble(tokens[1]);
             int quantity = Integer.parseInt(tokens[2]);
-            Product product = new Product(name, price, quantity);
-            if (!products.contains(product)) {
-                products.add(product);
+            Product existingProduct = products.stream().filter(p -> p.getName().equals(name)).findFirst().orElse(null);
+            if (existingProduct == null) {
+                products.add(new Product(name, price, quantity));
             } else {
-                Product existingProduct = products.get(products.indexOf(product));
                 existingProduct.setPrice(price);
-                existingProduct.setQuantity(existingProduct.getQuantity() + quantity);
+                existingProduct.addQuantity(quantity);
             }
             input = scanner.nextLine();
         }

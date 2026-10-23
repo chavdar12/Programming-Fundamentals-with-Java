@@ -10,9 +10,9 @@ public class CenterPoint {
         double distance1 = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
         double distance2 = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
         if (distance1 <= distance2) {
-            System.out.printf("(%f, %f)", x1, y1);
+            System.out.printf("(%.0f, %.0f)", x1, y1);
         } else {
-            System.out.printf("(%f, %f)", x2, y2);
+            System.out.printf("(%.0f, %.0f)", x2, y2);
         }
     }
 }

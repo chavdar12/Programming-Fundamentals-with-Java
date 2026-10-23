@@ -11,7 +11,7 @@ public class PokeMon {
         while (pokePower >= distance) {
             pokePower -= distance;
             targets++;
-            if (pokePower == originalPower / 2 && exhaustionFactor != 0) {
+            if (pokePower * 2 == originalPower && exhaustionFactor != 0) {
                 pokePower /= exhaustionFactor;
             }
         }

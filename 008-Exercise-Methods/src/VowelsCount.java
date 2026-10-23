@@ -10,7 +10,7 @@ public class VowelsCount {
     private static int vowelsCount(String input) {
         int count = 0;
         for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) == 'a' || input.charAt(i) == 'e' || input.charAt(i) == 'i' || input.charAt(i) == 'o' || input.charAt(i) == 'u' || input.charAt(i) == 'y') {
+            if ("aeiouAEIOU".indexOf(input.charAt(i)) != -1) {
                 count++;
             }
         }

@@ -9,9 +9,9 @@ public class GaussTrick {
         List<Integer> numbers = Arrays.stream(scanner.nextLine().split(" "))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
-        for (int i = 0; i < numbers.size() / 2; i++) {
-            numbers.set(i, numbers.get(i) + numbers.get(numbers.size() - 1 - i));
-            numbers.remove(numbers.size() - 1 - i);
+        int half = numbers.size() / 2;
+        for (int i = 0; i < half; i++) {
+            numbers.set(i, numbers.get(i) + numbers.remove(numbers.size() - 1));
         }
 
         for (Integer number : numbers) {

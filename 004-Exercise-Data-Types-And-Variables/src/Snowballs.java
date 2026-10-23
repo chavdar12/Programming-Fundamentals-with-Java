@@ -12,7 +12,7 @@ public class Snowballs {
             int snow = Integer.parseInt(scanner.nextLine());
             int time = Integer.parseInt(scanner.nextLine());
             int quality = Integer.parseInt(scanner.nextLine());
-            double value = Math.pow((snow / time), quality);
+            double value = Math.pow((double) snow / time, quality);
             if (value > snowballValue) {
                 snowballSnow = snow;
                 snowballTime = time;

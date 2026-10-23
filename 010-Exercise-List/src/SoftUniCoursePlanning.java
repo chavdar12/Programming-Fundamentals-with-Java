@@ -30,6 +30,7 @@ public class SoftUniCoursePlanning {
                 }
                 case "Remove" -> {
                     lessons.remove(lessonTitle);
+                    lessons.remove(lessonTitle + "-Exercise");
                 }
                 case "Swap" -> {
                     String secondLessonTitle = tokens[2];

@@ -38,7 +38,7 @@ public class Exercise_015 {
                 spend += price;
                 System.out.printf("Bought %s%n", game);
 
-                if (money == 0) {
+                if (money < 0.001) {
                     System.out.println("Out of money!");
                     return;
                 }

@@ -11,14 +11,17 @@ public class BalancedBrackets {
             String line = scanner.nextLine();
             if ("(".equals(line)) {
                 open++;
+                if (open - close > 1) {
+                    balanced = false;
+                }
             } else if (")".equals(line)) {
                 close++;
-            }
-            if (open - close != 0) {
-                balanced = false;
+                if (close > open) {
+                    balanced = false;
+                }
             }
         }
-        if (balanced) {
+        if (balanced && open == close) {
             System.out.println("BALANCED");
         } else {
             System.out.println("UNBALANCED");

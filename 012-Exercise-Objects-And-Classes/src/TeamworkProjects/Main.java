@@ -39,7 +39,8 @@ public class Main {
             }
             input = scan.nextLine();
         }
-        teams.stream().filter(t -> t.getMembers().size() > 0).sorted(Comparator.comparing(Team::getName)).forEach(t -> {
+        teams.stream().filter(t -> t.getMembers().size() > 0)
+                .sorted(Comparator.comparing((Team t) -> t.getMembers().size()).reversed().thenComparing(Team::getName)).forEach(t -> {
             System.out.println(t.getName());
             System.out.println("- " + t.getCreator());
             t.getMembers().stream().sorted(String::compareTo).forEach(m -> System.out.println("-- " + m));

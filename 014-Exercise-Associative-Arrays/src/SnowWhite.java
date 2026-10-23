@@ -18,16 +18,11 @@ public class SnowWhite {
             String color = lineInput[1];
             int physics = Integer.parseInt(lineInput[2]);
 
-            dwarfCountByColor.putIfAbsent(color, 0);
-            dwarfCountByColor.put(color, dwarfCountByColor.get(color) + 1);
-
             if (dwarfs.containsKey(dwarf)) {
-                if (dwarfs.get(dwarf) < physics) {
-                    dwarfs.put(dwarf, physics);
-                    dwarfCountByColor.put(color, dwarfCountByColor.get(color) - 1);
-                }
+                dwarfs.put(dwarf, Math.max(dwarfs.get(dwarf), physics));
             } else {
                 dwarfs.put(dwarf, physics);
+                dwarfCountByColor.merge(color, 1, Integer::sum);
             }
         }
 
@@ -45,7 +40,7 @@ public class SnowWhite {
             return sort;
         }).forEach(pair -> {
             String[] print = pair.getKey().split(" ");
-            System.out.printf("(%s) %s <-> %d %n", print[0], print[1], pair.getValue());
+            System.out.printf("(%s) %s <-> %d%n", print[0], print[1], pair.getValue());
         });
     }
 }

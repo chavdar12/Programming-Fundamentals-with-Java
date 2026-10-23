@@ -31,7 +31,7 @@ public class Main {
                 if (checkTirePressure(car)) {
                     System.out.println(car.getModel());
                 }
-            } else if ("flamable".equals(car.getCargoType())) {
+            } else if ("flamable".equals(cargoType) && car.getCargoType().equals(cargoType)) {
                 if (car.getEnginePower() > 250) {
                     System.out.println(car.getModel());
                 }

@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MathPower {
@@ -6,7 +7,7 @@ public class MathPower {
         double number = Double.parseDouble(scanner.nextLine());
         int power = Integer.parseInt(scanner.nextLine());
         double result = raiseToPower(number, power);
-        System.out.println(result);
+        System.out.println(new DecimalFormat("0.####").format(result));
     }
 
     private static double raiseToPower(double number, int power) {

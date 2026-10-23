@@ -13,7 +13,7 @@ public class ForceBook {
                 if (!map.containsKey(forceSide)) {
                     map.put(forceSide, new ArrayList<>());
                 }
-                if (!map.get(forceSide).contains(forceUser)) {
+                if (map.values().stream().noneMatch(users -> users.contains(forceUser))) {
                     map.get(forceSide).add(forceUser);
                 }
             } else if (input.contains("->")) {

@@ -14,5 +14,7 @@ public class Train {
         for (int i = 0; i < wagons; i++) {
             System.out.print(people[i] + " ");
         }
+        System.out.println();
+        System.out.println(sum);
     }
 }

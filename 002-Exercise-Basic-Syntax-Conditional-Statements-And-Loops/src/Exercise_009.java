@@ -10,7 +10,7 @@ public class Exercise_009 {
         double pricePerRobe = Double.parseDouble(scanner.nextLine());
         double pricePerBelt = Double.parseDouble(scanner.nextLine());
 
-        double lightSabersPrice = Math.ceil(padawansCnt * 1.1) * pricePerLightsaber;
+        double lightSabersPrice = ((padawansCnt * 11 + 9) / 10) * pricePerLightsaber;
         double robesTotalPrice = padawansCnt * pricePerRobe;
         int freeBelts = padawansCnt / 6;
         double beltsTotalPrice = (padawansCnt - freeBelts) * pricePerBelt;

@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class CountRealNumbers {
             counts.put(number, counts.get(number) + 1);
         }
         for (Map.Entry<Double, Integer> entry : counts.entrySet()) {
-            System.out.printf("%.1f -> %d%n", entry.getKey(), entry.getValue());
+            System.out.printf("%s -> %d%n", new DecimalFormat("0.#######").format(entry.getKey()), entry.getValue());
         }
     }
 }

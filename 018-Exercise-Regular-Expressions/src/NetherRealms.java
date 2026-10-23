@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class NetherRealms {
     public static void main(String[] args) {
@@ -6,7 +8,7 @@ public class NetherRealms {
         String[] demons = scanner.nextLine().split(",\\s*");
         Map<String, List<Double>> demonsInfo = new TreeMap<>();
         for (String demon : demons) {
-            String name = demon.replaceAll("[^a-zA-Z]+", "");
+            String name = demon.trim();
             double health = calculateHealth(demon);
             double damage = calculateDamage(demon);
             demonsInfo.put(name, new ArrayList<>());
@@ -18,11 +20,9 @@ public class NetherRealms {
 
     private static double calculateDamage(String demon) {
         double damage = 0;
-        String[] tokens = demon.split("[^0-9.+-]+");
-        for (String token : tokens) {
-            if (!token.isEmpty()) {
-                damage += Double.parseDouble(token);
-            }
+        Matcher matcher = Pattern.compile("[+-]?\\d+(\\.\\d+)?").matcher(demon);
+        while (matcher.find()) {
+            damage += Double.parseDouble(matcher.group());
         }
         for (int i = 0; i < demon.length(); i++) {
             if (demon.charAt(i) == '*') {

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayManipulator {
@@ -141,7 +142,7 @@ public class ArrayManipulator {
                 }
             }
         }
-        return result;
+        return Arrays.copyOf(result, index);
     }
 
     private static void printArray(int[] firstEven) {
@@ -172,7 +173,7 @@ public class ArrayManipulator {
                 }
             }
         }
-        return result;
+        return Arrays.copyOf(result, index);
     }
 
     private static int[] getLastEven(int[] numbers, int count1) {

@@ -22,7 +22,7 @@ public class Car {
     }
 
     public Car(String model, Engine engine, String color) {
-        this(model, engine, 0, "n/a");
+        this(model, engine, 0, color);
     }
 
     public String getModel() {

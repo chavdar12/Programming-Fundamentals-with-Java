@@ -34,7 +34,7 @@ public class Main {
                     engine = new Engine(model, power, displacement);
                 } else {
                     efficiency = tokens[2];
-                    engine = new Engine(model, power, efficiency);
+                    engine = new Engine(model, power, "n/a", efficiency);
                 }
             } else {
                 engine = new Engine(model, power, tokens[2], tokens[3]);

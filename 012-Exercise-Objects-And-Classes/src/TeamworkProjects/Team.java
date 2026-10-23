@@ -1,5 +1,6 @@
 package TeamworkProjects;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
@@ -14,6 +15,7 @@ public class Team {
     }
 
     public Team(String teamName, String creator) {
+        this(teamName, creator, new ArrayList<>());
     }
 
     public String getName() {

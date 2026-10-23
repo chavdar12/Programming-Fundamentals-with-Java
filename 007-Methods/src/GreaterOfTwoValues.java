@@ -23,8 +23,12 @@ public class GreaterOfTwoValues {
         }
     }
 
-    private static boolean getMax(String firstString, String secondString) {
-        return firstString.compareTo(secondString) >= 0;
+    private static String getMax(String firstString, String secondString) {
+        return firstString.compareTo(secondString) >= 0 ? firstString : secondString;
+    }
+
+    private static char getMax(char firstChar, char secondChar) {
+        return firstChar >= secondChar ? firstChar : secondChar;
     }
 
     private static int getMax(int firstNum, int secondNum) {

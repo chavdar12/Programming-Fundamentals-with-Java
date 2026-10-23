@@ -25,7 +25,11 @@ public class Exercise_007 {
                 case "Crisps" -> productPrice = 1.5;
                 case "Soda" -> productPrice = 0.8;
                 case "Coke" -> productPrice = 1.0;
-                default -> System.out.println("Invalid product");
+                default -> {
+                    System.out.println("Invalid product");
+                    product = scanner.nextLine();
+                    continue;
+                }
             }
 
             if (sumCoins >= productPrice) {

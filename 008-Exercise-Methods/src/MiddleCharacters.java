@@ -7,11 +7,12 @@ public class MiddleCharacters {
         System.out.println(middleCharacters(input));
     }
 
-    private static char middleCharacters(String input) {
+    private static String middleCharacters(String input) {
+        int middle = input.length() / 2;
         if (input.length() % 2 == 0) {
-            return input.charAt(input.length() / 2 - 1);
+            return input.substring(middle - 1, middle + 1);
         } else {
-            return input.charAt(input.length() / 2);
+            return input.substring(middle, middle + 1);
         }
     }
 }

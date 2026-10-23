@@ -20,22 +20,15 @@ public class LadyBugs {
             int flyLength = Integer.parseInt(commandArray[2]);
             if (bugIndex >= 0 && bugIndex < field.length && field[bugIndex] == 1) {
                 field[bugIndex] = 0;
-                if (direction.equals("right")) {
-                    bugIndex += flyLength;
-                    while (bugIndex < field.length && field[bugIndex] == 1) {
-                        bugIndex += flyLength;
+                int step = direction.equals("left") ? -flyLength : flyLength;
+                if (step != 0) {
+                    bugIndex += step;
+                    while (bugIndex >= 0 && bugIndex < field.length && field[bugIndex] == 1) {
+                        bugIndex += step;
                     }
-                    if (bugIndex < field.length) {
-                        field[bugIndex] = 1;
-                    }
-                } else {
-                    bugIndex -= flyLength;
-                    while (bugIndex >= 0 && field[bugIndex] == 1) {
-                        bugIndex -= flyLength;
-                    }
-                    if (bugIndex >= 0) {
-                        field[bugIndex] = 1;
-                    }
+                }
+                if (bugIndex >= 0 && bugIndex < field.length) {
+                    field[bugIndex] = 1;
                 }
             }
             command = scanner.nextLine();

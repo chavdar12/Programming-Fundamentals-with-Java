@@ -4,7 +4,7 @@ public class MultiplyEvensByOdds {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = Integer.parseInt(scanner.nextLine());
-        int result = getMultipleOfEvensAndOdds(number);
+        int result = getMultipleOfEvensAndOdds(Math.abs(number));
         System.out.println(result);
     }
 
