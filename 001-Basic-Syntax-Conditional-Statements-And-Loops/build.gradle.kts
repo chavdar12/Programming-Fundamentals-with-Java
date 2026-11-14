@@ -1,4 +1,4 @@
-subprojects {
+allprojects {
     apply(plugin = "java")
 
     repositories {
@@ -18,7 +18,7 @@ project(":test-support") {
     }
 }
 
-configure(subprojects.filter { it.name != "test-support" }) {
+configure(allprojects.filter { it.name != "test-support" }) {
     extensions.configure<SourceSetContainer> {
         named("main") { java.setSrcDirs(listOf("src")) }
         named("test") { java.setSrcDirs(listOf("test")) }
