@@ -13,7 +13,7 @@ subprojects {
 
 project(":test-support") {
     dependencies {
-        "implementation"(platform("org.junit:junit-bom:5.13.4"))
+        "implementation"(platform("org.junit:junit-bom:6.1.3"))
         "implementation"("org.junit.jupiter:junit-jupiter-api")
     }
 }
@@ -26,7 +26,7 @@ configure(subprojects.filter { it.name != "test-support" }) {
 
     dependencies {
         "testImplementation"(project(":test-support"))
-        "testImplementation"(platform("org.junit:junit-bom:5.13.4"))
+        "testImplementation"(platform("org.junit:junit-bom:6.1.3"))
         "testImplementation"("org.junit.jupiter:junit-jupiter")
         "testRuntimeOnly"("org.junit.platform:junit-platform-launcher")
     }

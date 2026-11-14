@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercise_004 {
+public class PrintAndSum {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int startNumber = Integer.parseInt(scanner.nextLine());

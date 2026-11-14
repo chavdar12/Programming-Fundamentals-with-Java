@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Exercise_011 {
+public class SortNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int num1 = Integer.parseInt(scanner.nextLine());

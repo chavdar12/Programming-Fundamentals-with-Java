@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PassedOrFaled {
+public class PassedOrFailed {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

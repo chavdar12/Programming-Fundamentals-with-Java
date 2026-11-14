@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercise_017 {
+public class Messages {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
