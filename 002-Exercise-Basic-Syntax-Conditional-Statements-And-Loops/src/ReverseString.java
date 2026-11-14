@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercise_016 {
+public class ReverseString {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();

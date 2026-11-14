@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercise_005 {
+public class Login {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String username = scanner.nextLine();

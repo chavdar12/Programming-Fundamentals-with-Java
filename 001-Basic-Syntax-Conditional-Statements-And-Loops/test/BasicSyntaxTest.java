@@ -15,7 +15,7 @@ class BasicSyntaxTest {
 
     @Test
     void dividableByThree() {
-        String output = run(DividableByThree::main);
+        String output = run(DivisibleByThree::main);
         assertTrue(output.startsWith("3\n6\n9"));
         assertTrue(output.endsWith("99"));
     }
@@ -50,11 +50,11 @@ class BasicSyntaxTest {
     void passedOrFailed() {
         assertEquals("Passed!", run(Passed::main, "5.32"));
         assertEquals("", run(Passed::main, "2.34"));
-        assertEquals("Failed!", run(PassedOrFaled::main, "2.99"));
+        assertEquals("Failed!", run(PassedOrFailed::main, "2.99"));
     }
 
     @Test
-    void sumOfOddNumbers() {
+    void refactorSumOfOddNumbers() {
         assertEquals("1\n3\n5\nSum: 9", run(RefactorSumOfOddNumbers::main, "3"));
     }
 
@@ -68,5 +68,11 @@ class BasicSyntaxTest {
         assertEquals("18$", run(TheatrePromotions::main, "Weekday", "42"));
         assertEquals("15$", run(TheatrePromotions::main, "Weekend", "122"));
         assertEquals("Error!", run(TheatrePromotions::main, "Holiday", "-12"));
+    }
+
+    @Test
+    void sumOfOddNumbers() {
+        assertEquals("1\n3\n5\n7\n9\nSum: 25", run(SumOfOddNumbers::main, "5"));
+        assertEquals("1\n3\n5\nSum: 9", run(SumOfOddNumbers::main, "3"));
     }
 }
