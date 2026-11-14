@@ -38,3 +38,6 @@ Icon?
 .fseventsd
 .DocumentRevisions-V100
 .TemporaryItems
+
+# Each lesson ships its own Gradle wrapper
+!gradle-wrapper.jar
